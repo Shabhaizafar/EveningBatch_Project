@@ -1,0 +1,34 @@
+Home Page : 
+https://www.pagani.com/app/uploads/2024/07/Pagani-Utopia-Roadster-Home-1440x810-1.png
+
+Logo  : (Header)
+https://www.pagani.com/app/themes/pagani/assets/images/header-logo.png
+
+
+Logo 2(Menu) : 
+https://www.pagani.com/app/themes/pagani/assets/images/menu-logo.png
+
+Section 2: 
+ https://www.pagani.com/app/uploads/2016/11/home-history-2.jpg
+
+ https://www.pagani.com/app/themes/pagani/assets/images/signature-white.png
+
+
+Past : 
+
+2 : https://www.pagani.com/app/uploads/2016/11/02-la-sfida@05x-2.jpg
+3 : https://www.pagani.com/app/uploads/2016/11/03-leonardo@05x.jpg
+4 : https://www.pagani.com/app/uploads/2016/11/04-la-perfezione@05x.jpg
+5 : https://www.pagani.com/app/uploads/2016/11/futuro_1x-1.jpg
+
+Present : 
+
+1 : https://www.pagani.com/app/uploads/2017/02/laterale_01.RGB_color.0000.V2-copy.jpg
+
+
+Future : 
+
+2 : https://www.pagani.com/app/uploads/2016/11/02-laricerca-2.jpg
+3 : https://www.pagani.com/app/uploads/2016/11/03-la-bellezza.jpg
+4 : https://www.pagani.com/app/uploads/2016/11/04-il-sogno.jpg
+5 : https://www.pagani.com/app/uploads/2016/11/futuro_1x-1.jpg

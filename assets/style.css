@@ -1,0 +1,137 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.bg{
+    transform: scale(1.05,1.05);
+    object-position: -40px -75px;
+}
+.bgdiv{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    z-index: -1;
+}
+.bgptn{
+    background-image: url(bg-pattern.png);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+header aside:first-child{
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header aside:nth-child(2){
+    grid-column: 3;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+header aside img{
+    width: 136px;
+    height: 18px;
+    object-fit: cover;
+    object-position: 0% 110%;
+}
+header aside:nth-child(2) span{
+    color: white;
+    background-color: rgba(0, 0, 0, .4);
+    padding: 15px 12px;
+}
+footer{
+    left: 50px;
+    position: absolute;
+    bottom: 20px;
+    color: rgba(255,255,255,.5);
+    font-size: 12px;
+    font-family: sans-serif;
+}
+footer p a{
+    color: rgba(255,255,255,.5);
+    font-family: sans-serif;
+    text-decoration: none;
+}
+/*  */
+main.home-content{
+    position: absolute;
+    text-align: center;
+    width: 70%;
+    top: calc(50vh - 120px);
+    left: 15%;
+}
+main.home-content img{
+    width: 25%;
+}
+main.home-content h1{
+    color: white;
+    font-size: 36px;
+    font-family: sans-serif;
+    margin: 25px 0px 20px;
+}
+main.home-content div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+main.home-content div a{
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+div.scroll{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50vw - 50px);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-family: sans-serif;
+}
+div.scroll span{
+    font-size: 12px;
+}
+
+div.scroll svg{
+    fill: white;
+}
+.scroll-invitation__svg-line{
+    animation-name: scroll;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes scroll {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
