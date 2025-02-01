@@ -1,5 +1,5 @@
 const body = document.body.innerHTML;
-// console.log(body);
+const btn_menu = document.querySelector('.menu-btn');
 
 
 document.body.onload = function(){
@@ -25,5 +25,11 @@ document.body.onload = function(){
         }, 1000);
     setTimeout(() => {
         document.body.innerHTML = body;
+        btn_menu.classList.add('add-btn-bg');
     }, 2000);
 }
+
+
+btn_menu.onclick = function(){
+    console.log("wert");
+};
