@@ -1,5 +1,6 @@
 const body = document.body.innerHTML;
 const btn_menu = document.querySelector('.menu-btn');
+console.log(btn_menu);
 
 
 document.body.onload = function(){
@@ -25,11 +26,13 @@ document.body.onload = function(){
         }, 1000);
     setTimeout(() => {
         document.body.innerHTML = body;
-        btn_menu.classList.add('add-btn-bg');
     }, 2000);
 }
-
-
-btn_menu.onclick = function(){
-    console.log("wert");
-};
+document.body.addEventListener('click',function(event){
+    if(event.target.innerText == 'menu'){
+        document.querySelector('.side-menu').style.display = "grid";
+    }
+    if(event.target.innerText == 'close'){
+        document.querySelector('.side-menu').style.display = "none";
+    }
+});

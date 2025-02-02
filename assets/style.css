@@ -242,3 +242,19 @@ div.scroll svg{
     margin-bottom: 30px;
     text-align: center;
 }
+.side-menu>span{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    animation-name: grow;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    cursor: pointer;
+}
+@keyframes grow {
+    from{
+        transform: scale(1,.2);
+    }to{
+        transform: scale(1,1);
+    }
+}
