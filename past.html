@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+        .section-3{
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+        }
+        .section-3>ul{
+            position: absolute;
+            top: 200px;
+            left: 400px;
+        }
+        .section-3>ul li{
+            /* background-color: black; */
+            width: 45px; 
+            overflow: hidden;
+            transition: all 1s;
+        }
+        .active{
+            width: 150px !important;
+        }
+        .section-3>ul li a{
+            width: 150px;
+            color: white;
+            font-family: calibri;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+            padding: 25px 5px 5px 15px;
+            align-items: baseline;
+        }
+        a::before{
+            content: attr(data-text);
+        }
+    </style>
+</head>
+<body>
+    <section class="section-3">
+        <ul>
+            <li class="active active2" ><a href="" data-text="01"> INTRO0</a></li>
+            <li><a href="" data-text="02"> INTRO1</a></li>
+            <li><a href="" data-text="03"> INTRO2</a></li>
+            <li><a href="" data-text="04"> INTRO3</a></li>
+            <li><a href="" data-text="05"> INTRO4</a></li>
+        </ul>
+    </section>
+
+    <script>
+        const ul = document.querySelector('ul');
+        ul.onmouseover = function(event){
+            event.preventDefault();
+            if(event.target.tagName == "A" && !event.target.parentElement.classList.contains('active2') ){
+                event.target.parentElement.classList.add('active');
+            }
+        }
+        ul.onmouseout = function(event){
+            event.preventDefault();
+            if(event.target.tagName == "A" && !event.target.parentElement.classList.contains('active2')){
+                event.target.parentElement.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
