@@ -4,6 +4,12 @@
     box-sizing: border-box;
     list-style-type: none;
 }
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 0px;
+  }
 .container{
     height: 100vh;
     width: 100%;
@@ -257,4 +263,49 @@ div.scroll svg{
     }to{
         transform: scale(1,1);
     }
+}
+
+
+/* ------------------------ */
+.section-2{
+    height: 100vh;
+    background-image: url("home-history-2.jpg");
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 60% 45%;
+    position: relative;
+    
+}
+.section-2 article{
+    width: 60vw;
+    position: relative;
+    top: calc(50vh - 137px);
+    left: 20vw;
+    text-align: center;
+}
+.section-2 article p{
+    color: white;
+    font-style: italic;
+    font-family: sans-serif;
+    margin-bottom: 40px;
+}
+.section-2 article .tense {
+     column-count: 3;
+     column-gap: 1px;
+     column-rule: 1px solid rgba(128, 128, 128, 0.322);
+     margin-bottom: 70px;
+}
+
+.section-2 article .tense a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    padding: 25px;
+    font-size: 24px;
+}
+
+.section-1{
+    height: 100vh;
+    position: relative;
 }

@@ -1,7 +1,5 @@
 const body = document.body.innerHTML;
 const btn_menu = document.querySelector('.menu-btn');
-console.log(btn_menu);
-
 
 document.body.onload = function(){
     document.body.innerHTML = "";
@@ -36,3 +34,12 @@ document.body.addEventListener('click',function(event){
         document.querySelector('.side-menu').style.display = "none";
     }
 });
+
+
+setInterval(() => {
+    if(scrollY>0){
+        location.href = "#sec-2";   
+    }else if(screenY<window.innerHeight){
+        location.href = "#sec-1";   
+    }
+},0);
