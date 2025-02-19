@@ -36,10 +36,21 @@ document.body.addEventListener('click',function(event){
 });
 
 
-setInterval(() => {
-    if(scrollY>0){
-        location.href = "#sec-2";   
-    }else if(screenY<window.innerHeight){
-        location.href = "#sec-1";   
-    }
-},0);
+// setInterval(() => {
+//     if(scrollY>0){
+//         location.href = "#sec-2";   
+//     }else if(screenY<window.innerHeight){
+//         location.href = "#sec-1";   
+//     }
+// },0);
+
+
+// -----------------------
+
+
+function All(){
+    document.querySelector('.past-c').style.left = "0vw";
+    document.querySelector('.past-c').style.transition= 'all 2s';
+}
+
+

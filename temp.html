@@ -11,14 +11,74 @@
             padding: 0px;
             list-style-type: none;
             box-sizing: border-box;
-        }        
-
-
+        }      
+        .container{
+            display: flex;
+            gap: 10px;
+            width: 200vw;
+            height: 100vh;   
+        }  
+        .container div{
+            background-color: red;
+            width: 100vw;
+            position: relative;
+            left: 0vw;
+        }
+        .container div:nth-child(2){
+            background-color: blue;
+        }
+        section{
+            width: 50%;
+            margin: auto;
+        }
+        img{
+            width: 100%;    
+        }
+        .btn button:nth-child(2){
+            display: none;
+        }
+        .btn{
+            position: fixed;
+            top: 40%;
+            right: 0px;
+            display: grid;
+        }
+        .btn button{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            font-size: 24px;
+            color: white;
+            border: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        
+        <div>
+            <section><img src="https://www.pagani.com/app/uploads/2016/12/1955.jpg" alt=""></section>
+        </div>
+        <div class="second">
+            <section><img src="https://www.pagani.com/app/uploads/2016/12/1967.jpg" alt=""></section>
+        </div>
     </div>    
+
+    <main class="btn">
+        <button class="l">></button>
+        <button>&lt;</button>
+    </main>
+
+    <script>
+        const btn_l = document.querySelector('.l');
+        var counter = 0;
+        btn_l.onclick = function (){
+            if(counter==0){
+                counter++;
+                var second_slide = document.querySelector('.second');
+                second_slide.style.left = "-100vw !important";
+                console.log(counter);
+            }
+        }
+    </script>
 </body>
 </html>
