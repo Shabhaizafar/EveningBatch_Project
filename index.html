@@ -35,6 +35,10 @@
             width: 150px !important;
             color: white !important;
         }
+        .active2{
+            width: 150px !important;
+            color: white !important;
+        }
         .active ::before{
             color: white !important;
         }
@@ -184,12 +188,12 @@
 
         <section class="past-c">
             <section class="section-3">
-                <ul>
+                <ul class="past-ul">
                     <li class="active active2" ><a href="" data-text="01"> INTRO0</a></li>
-                    <li><a href="" data-text="02"> INTRO1</a></li>
-                    <li><a href="" data-text="03"> INTRO2</a></li>
-                    <li><a href="" data-text="04"> INTRO3</a></li>
-                    <li><a href="" data-text="05"> INTRO4</a></li>
+                    <li><a href="#" data-text="02"> INTRO1</a></li>
+                    <li><a href="#" data-text="03"> INTRO2</a></li>
+                    <li><a href="#" data-text="04"> INTRO3</a></li>
+                    <li><a href="#" data-text="05"> INTRO4</a></li>
                     <li></li>
                 </ul>
                 <div class="intro-1">
@@ -197,22 +201,6 @@
                     <p>That of Horacio Pagani is the great adventure of an art and engineering crusade. How did the myth of Pagani Automobili come to life, the brand for which cars the richest men in the world are willing to spend a crazy amount of money?</p>
                 </div>
             </section>
-        
-            <script>
-                const ul = document.querySelector('ul');
-                ul.onmouseover = function(event){
-                    event.preventDefault();
-                    if(event.target.tagName == "A" && !event.target.parentElement.classList.contains('active2') ){
-                        event.target.parentElement.classList.add('active');
-                    }
-                }
-                ul.onmouseout = function(event){
-                    event.preventDefault();
-                    if(event.target.tagName == "A" && !event.target.parentElement.classList.contains('active2')){
-                        event.target.parentElement.classList.remove('active');
-                    }
-                }
-            </script>
         </section>
     </div>
     <script src="All.js" defer></script>
