@@ -13,26 +13,37 @@
             box-sizing: border-box;
         }      
         .container{
-            display: flex;
-            gap: 10px;
-            width: 200vw;
-            height: 100vh;   
+            overflow: hidden;
         }  
-        .container div{
-            background-color: red;
-            width: 100vw;
+        .container .history-cnt{
+            height: 100vh;
+            background-image: url(assets/bg-pattern.png),radial-gradient(at 50% 45%,white,#0d0d0d,#0e0e0f,#111011,#151414);
             position: relative;
-            left: 0vw;
         }
-        .container div:nth-child(2){
-            background-color: blue;
+        .history-cnt div{
+            width: 80%;
+            left: 10%;
+            top: 60px;
+            height: 70%;
+            position: absolute;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 40px;
+            left: 100vw;
+            transition: all .5s;
         }
-        section{
-            width: 50%;
-            margin: auto;
+        .history-cnt div p,.history-cnt div h2,.history-cnt div a{
+            color: white;
+            text-decoration: none;
         }
-        img{
-            width: 100%;    
+        .history-cnt div:nth-child(1){
+            left: 10vw;
+        }
+        .history-cnt div img{
+            width: 100%;
+        }
+        .history-cnt div article{
+            align-content: center;
         }
         .btn button:nth-child(2){
             display: none;
@@ -48,35 +59,76 @@
             height: 50px;
             background-color: blue;
             font-size: 24px;
-            color: white;
+            color: white ;
             border: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div>
-            <section><img src="https://www.pagani.com/app/uploads/2016/12/1955.jpg" alt=""></section>
-        </div>
-        <div class="second">
-            <section><img src="https://www.pagani.com/app/uploads/2016/12/1967.jpg" alt=""></section>
-        </div>
+        <section class="history-cnt">
+            <div class="history1">
+                <article class="more-content1">
+                    <h2>The boy who wanted to create the most beautiful car in the world.</h2>
+                    <p>When you point a visionary bow to a star and let yourself float on the wings of the dream towards an unpredictable destination, thirsty of perfection and rebel to mediocrity, you carry with you the misterious spring of an ideal.
+                        <br>
+                        
+                            Josè Ingenieros, Argentinian writer
+                    </p>
+                    <a href="">Read more</a>
+                </article>
+                <article class="more-content2">
+                    <a href="">
+                        <img src="https://www.pagani.com/app/uploads/2016/12/1955.jpg" alt="">
+                    </a>
+                </article>
+                <article class="more-content3"></article>
+            </div>
+            <div class="history2">
+                <article class="more-content1">
+                    <h2>The boy who wanted to create the most beautiful car in the world.</h2>
+                    <p>When you point a visionary bow to a star and let yourself float on the wings of the dream towards an unpredictable destination, thirsty of perfection and rebel to mediocrity, you carry with you the misterious spring of an ideal.
+                        <br>
+                        
+                            Josè Ingenieros, Argentinian writer
+                    </p>
+                    <a href="">Read more</a>
+                </article>
+                <article class="more-content2">
+                    <a href="">
+                        <img src="https://www.pagani.com/app/uploads/2016/12/1967.jpg" alt="">
+                    </a>
+                </article>
+                <article class="more-content3"></article>
+            </div>
+        </section>
     </div>    
-
     <main class="btn">
-        <button class="l">></button>
-        <button>&lt;</button>
+        <button class="l">&gt;</button>
+        <button class="g">&lt;</button>
     </main>
 
     <script>
         const btn_l = document.querySelector('.l');
+        const btn_g = document.querySelector('.g');
+
         var counter = 0;
         btn_l.onclick = function (){
+            counter++;
+            if(counter==1){
+                document.querySelector('.g').style.display = "block"; 
+                document.querySelector('.history1').style.left = "-100vw";
+                document.querySelector('.history2').style.left = "10vw";
+            }
+        }
+        btn_g.onclick = function (){
+            counter--;
             if(counter==0){
-                counter++;
-                var second_slide = document.querySelector('.second');
-                second_slide.style.left = "-100vw !important";
-                console.log(counter);
+                document.querySelector('.g').style.display = "block"; 
+                document.querySelector('.history1').style.left = "10vw";
+                document.querySelector('.history2').style.left = "100vw";
+                document.querySelector('.g').style.display = "none"; 
+
             }
         }
     </script>

@@ -57,12 +57,17 @@ function All() {
 
 const ul = document.querySelector('.past-ul');
 ul.addEventListener('mouseover',function(event){
-    if(event.target.tagName=='A' && !event.target.parentElement.classList.contains('active')){
+    if(event.target.tagName=='BUTTON' && !event.target.parentElement.classList.contains('active')){
         event.target.parentElement.classList.add('active');
     }
 });
 ul.addEventListener('mouseout',function(event){
-    if(event.target.tagName=='A' && event.target.parentElement.classList.contains('active')){
+    if(event.target.tagName=='BUTTON' && event.target.parentElement.classList.contains('active')){
         event.target.parentElement.classList.remove('active');
+    }
+});
+ul.addEventListener('click',function(event){
+    if(event.target.tagName=='BUTTON' && event.target.innerText=="INTRO1"){
+        document.querySelector('.section-4').style.top = "0vh";
     }
 });
