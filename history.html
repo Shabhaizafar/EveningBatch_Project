@@ -1,21 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0px;
-            
+            padding: 0px;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+
+        .container {
+            overflow: hidden;
+        }
+
+        .container .history-cnt {
+            height: 100vh;
+            background-image: url(assets/bg-pattern.png), radial-gradient(at 50% 45%, white, #0d0d0d, #0e0e0f, #111011, #151414);
+            position: relative;
+        }
+
+        .history-cnt div {
+            width: 80%;
+            left: 10%;
+            top: 60px;
+            height: 70%;
+            position: absolute;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 40px;
+            left: 100vw;
+            transition: all .5s;
+        }
+
+        .history-cnt div p,
+        .history-cnt div h2,
+        .history-cnt div a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .history-cnt div:nth-child(1) {
+            left: 10vw;
+        }
+
+        .history-cnt div img {
+            width: 100%;
+        }
+
+        .history-cnt div article {
+            align-content: center;
+        }
+
+        .btn button:nth-child(2) {
+            display: none;
+        }
+
+        .btn {
+            position: fixed;
+            top: 40%;
+            right: 0px;
+            display: grid;
+        }
+
+        .btn button {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            font-size: 24px;
+            color: white;
+            border: none;
+        }
+
+        .history-line {
+            position: relative;
+            top: 85vh;
+        }
+
+        .history-line article {
+            display: flex;
+            position: relative;
+            left: calc(50% - 75px);
+            transition: all .4s;
+        }
+        .history-line article::before{
+            content: '';
+            color: red;
+            width: 100%;
+            position: absolute;
+            left: calc(-50% + 75px);
+            top: -20px;
+            height: 1px;
+            background-image: radial-gradient(white,transparent);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .history-line article button {
+            flex-basis: 150px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            cursor: pointer;
+            padding: 10px;
         }
     </style>
 </head>
+
 <body>
+    <div class="container">
+        <section class="history-cnt">
+            <div class="history1">
+                <article class="more-content1">
+                    <h2>The boy who wanted to create the most beautiful car in the world.</h2>
+                    <p>When you point a visionary bow to a star and let yourself float on the wings of the dream towards
+                        an unpredictable destination, thirsty of perfection and rebel to mediocrity, you carry with you
+                        the misterious spring of an ideal.
+                        <br>
 
-    <section class="history">
+                        Josè Ingenieros, Argentinian writer
+                    </p>
+                    <a href="">Read more</a>
+                </article>
+                <article class="more-content2">
+                    <a href="">
+                        <img src="https://www.pagani.com/app/uploads/2016/12/1955.jpg" alt="">
+                    </a>
+                </article>
+                <article class="more-content3"></article>
+            </div>
+            <div class="history2">
+                <article class="more-content1">
+                    <h2>The boy who wanted to create the most beautiful car in the world.</h2>
+                    <p>When you point a visionary bow to a star and let yourself float on the wings of the dream towards
+                        an unpredictable destination, thirsty of perfection and rebel to mediocrity, you carry with you
+                        the misterious spring of an ideal.
+                        <br>
 
-    </section>
-    <!-- End of History -->
+                        Josè Ingenieros, Argentinian writer
+                    </p>
+                    <a href="">Read more</a>
+                </article>
+                <article class="more-content2">
+                    <a href="">
+                        <img src="https://www.pagani.com/app/uploads/2016/12/1967.jpg" alt="">
+                    </a>
+                </article>
+                <article class="more-content3"></article>
+            </div>
+            <section class="history-line">
+                <article>
+                    <button>1955</button>
+                    <button>1967</button>
+                    <button>1971</button>
+                    <button>2004</button>
+                    <button>2005</button>
+                    <button>2006</button>
+                    <button>2007</button>
+                    <button>2008</button>
+                    <button>2009</button>
+                </article>
+            </section>
+        </section>
+    </div>
+    <main class="btn">
+        <button class="l">&gt;</button>
+        <button class="g">&lt;</button>
+    </main>
+
+    <script>
+        const btn_l = document.querySelector('.l');
+        const btn_g = document.querySelector('.g');
+
+        var counter = 0;
+        btn_l.onclick = function () {
+            counter++;
+            if (counter == 1) {
+                document.querySelector('.g').style.display = "block";
+                document.querySelector('.history1').style.left = "-100vw";
+                document.querySelector('.history2').style.left = "10vw";
+                article_line.style.left=  'calc(50% - 225px)';
+            }
+        }
+        btn_g.onclick = function () {
+            counter--;
+            if (counter == 0) {
+                document.querySelector('.history1').style.left = "10vw";
+                document.querySelector('.history2').style.left = "100vw";
+                document.querySelector('.g').style.display = "none";
+                article_line.style.left=  'calc(50% - 75px)';   
+            }
+        }
+
+        const article_line = document.querySelector('.history-line article');
+        article_line.addEventListener('click', function (event) {
+            if (event.target.innerText == '1955') {
+                article_line.style.left=  'calc(50% - 75px)';
+                document.querySelector('.history1').style.left = "10vw";
+                document.querySelector('.history2').style.left = "100vw";
+                document.querySelector('.g').style.display = "none";
+            } else if (event.target.innerText == '1967') {
+                article_line.style.left=  'calc(50% - 225px)';
+                document.querySelector('.g').style.display = "block";
+                document.querySelector('.history1').style.left = "-100vw";
+                document.querySelector('.history2').style.left = "10vw";
+            }
+        });
+    </script>
 </body>
+
 </html>
